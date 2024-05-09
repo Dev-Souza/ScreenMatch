@@ -39,7 +39,7 @@ public class Principal {
                     9 - Buscar episódio por trecho
                     10 - Top Episodios por série
                     11 - Buscar episódios a partir de uma data
-                    0 - Sair                                 
+                    0 - Sair
                     """;
 
             System.out.println(menu);
