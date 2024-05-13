@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import retrofit2.http.Path;
 
 import java.util.List;
 
@@ -49,5 +50,13 @@ public class SerieController {
         return servico.obterDadosTemporadaPorId(id, numero);
     }
 
+    @GetMapping("/categoria/{nomeGenero}")
+    public List<SerieDTO> obterSeriesPorGenero(@PathVariable String nomeGenero){
+        return servico.obterSeriesPorGenero(nomeGenero);
+    }
 
+    @GetMapping("/{idSerie}/temporadas/top5")
+    public List<EpisodioDTO> obterTop5EpisodiosDeUmaSerie(@PathVariable Long idSerie){
+        return servico.obterTop5EpisodiosDeUmaSerie(idSerie);
+    }
 }
